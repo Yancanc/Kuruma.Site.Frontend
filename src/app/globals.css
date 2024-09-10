@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+@font-face {
+  font-family: 'ToyotaType';
+  src: url('https://cdn.designsystemtoyota.com.br/font/ToyotaType-Regular.woff2') format('woff2'),
+       url('https://cdn.designsystemtoyota.com.br/font/ToyotaType-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ToyotaType';
+  src: url('https://cdn.designsystemtoyota.com.br/font/ToyotaType-Bold.woff2') format('woff2'),
+       url('https://cdn.designsystemtoyota.com.br/font/ToyotaType-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+* {
+  font-family: 'ToyotaType', sans-serif !important;
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Slick CSS */
+.customDotsGap .slick-dots{
+  gap: 2rem
+}
+.slick-dots {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem
+}
+.slick-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.customSlickFlex .slick-track {
+  display: flex;
+  align-items: end;
+}
+
+/* Divs Animation CSS */
+.divHover:hover .up-div {
+  padding-bottom: 4rem;
+}
+.divHover:hover .paint-button {
+  background-color: #545454;
+  color: white
+}
+.divHover:hover .paint-button-alternative {
+  background-color: white;
+  color:black
+}
+.divHover:hover .show{
+  display: block;
+  opacity: 1;
+}
+.divHover:hover .enlargeImage {
+height: 220px;
+}
+
+/* Forms CSS */
+select {
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+}
+
+.checkboxGroup input:checked ~ .checkboxMark {
+  background: #000;
+}
+.checkboxGroup:hover input ~ .checkboxMark {
+  background: #545454;
+}
